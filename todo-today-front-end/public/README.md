@@ -7,8 +7,8 @@ This application is licensed under an [MIT License](https://github.com/mcbarnhar
 ## Requirements
 - [ ] Design your application with a header, main section, and a footer
 - [ ] The overall styling is up to you
-- [ ] The header should present the application title
-- [ ] The main section must have:
+- [x] The header should present the application title
+- The main section must have:
 - [ ] A Form where the user can a new item to the todo list
 ### Items should have the following fields:
 - [ ] To Do Item Text
@@ -21,13 +21,13 @@ This application is licensed under an [MIT License](https://github.com/mcbarnhar
 - [ ] Items should be styled differently when complete/incomplete making their status visually obvious
 - [ ] Implementation Notes/Details
 #### Create separate components for each visual part of the application
-- [ ] Header
-- [ ] Footer
-- [ ] To Do List
+- [x] Header
+- [x] Footer
+- [x] To Do List
 - [ ] Each function must be a function component (no classes!)
 - [ ] Use a useEffect() hook to change the title of the browser with the complete/incomplete counts
 ### Optional
-- [ ] Separate the Form and List display elements into separate components within a wrapper component
+- [x] Separate the Form and List display elements into separate components within a wrapper component
 - [ ] Use the wrapper to hold the state and methods
 
 ## API
