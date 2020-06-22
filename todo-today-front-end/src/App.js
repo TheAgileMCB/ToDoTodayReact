@@ -1,12 +1,14 @@
 import React from 'react';
-import logo from './logo.svg';
 import './App.css';
 
 function App() {
   return (
     <>
     <Header />
-    <Main />
+    <main>
+    <ToDoList />
+    <ToDoForm />
+    </main>
     <Footer />
     </>
   );
