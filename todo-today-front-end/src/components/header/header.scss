@@ -25,7 +25,7 @@ header {
         justify-content: space-between;
         .board-button, .home-button {
             border-radius: 10px;
-            border: 2px solid rgb(148, 148, 148);
+            border: 2px outset rgb(148, 148, 148);
             a {
                 font-family: $font;
                 text-decoration: none;
@@ -33,8 +33,11 @@ header {
                 font-size: 1rem;
             }
             &:hover {
-                border: 2px groove rgb(148, 148, 148);
+                border: 2px inset rgb(148, 148, 148);
             }
+            // &:active {
+            //     background: steelblue;
+            // }
         }
     }
 }
