@@ -5,6 +5,8 @@ export default function ToDoBoard() {
     // str = str.replace(/(\d+)/g,function(a){return Array(+a+1).join('*')});
 
     return (
+        <>
+        <h1>The BOARD</h1>
         <div className="card">
             {/* <h1>{this.props.Title}</h1>
             <p>{this.props.CreatedBy}</p>
@@ -14,5 +16,6 @@ export default function ToDoBoard() {
             <p>{this.props.EstimatedTimeToComplete}</p> */}
             {/* <p>int to star transform goes here. consider regex?</p> */}
         </div>
+        </>
     );
 }
