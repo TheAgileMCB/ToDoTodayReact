@@ -7,9 +7,10 @@ export default function ToDoList() {
 
     return (
         <div className="list">
-            {/* <h1>{this.props.Title}</h1>
-            <h2><span>{this.props.StartTime}</span><span>{this.props.DueTime}</span></h2>
-            <h2>{this.props.Assignee}</h2> */}
+            <h1>the LIST</h1>
+            {/* <h2>{this.props.Title}</h2>
+            <h3><span>{this.props.StartTime}</span><span>{this.props.DueTime}</span></h3>
+            <h3>{this.props.Assignee}</h3> */}
         </div>
     );
 }
