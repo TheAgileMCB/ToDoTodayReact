@@ -18,39 +18,39 @@ export default function Form(props) {
         this.props.onReceiveResults(taskId, title, createdBy, startTime, dueTime, assignee, description, estimateTimeToComplete, difficultyRating, taskComplete);
     }
 
-    // function handleSubmit(e) {
-    //     e.preventDefault();
-    //     let form = e.target;
+    const handleSubmit = e => {
+        e.preventDefault();
+        let form = e.target;
 
-    //     if (this.state.Title && this.state.CreatedBy) {
+        if (this.state.Title) {
 
-    //         this.props.toggleLoading();
+            this.props.toggleLoading();
 
-    //         //   let request = {
-    //         //     url: this.state.url,
-    //         //     method: this.state.method,
-    //         //   };
+            //   let request = {
+            //     url: this.state.url,
+            //     method: this.state.method,
+            //   };
 
-    //         getDataFromApi();
+            getDataFromApi();
 
-    //         // Clear old settings
-    //         //   let url = '';
-    //         //   let method = '';
+            // Clear old settings
+            //   let url = '';
+            //   let method = '';
 
-    //         //   this.setState({ request, url, method });
-    //         form.reset();
+            //   this.setState({ request, url, method });
+            form.reset();
 
-    //         this.props.toggleLoading();
-    //     }
+            this.props.toggleLoading();
+        }
 
-    //     else {
-    //         alert('missing information');
-    //     }
-    // }
+        else {
+            alert('missing information');
+        }
+    }
 
     return (
         <div className="form-wrapper">
-            <form data-testid="form" className="form" onSubmit={getDataFromApi()}>
+            <form data-testid="form" className="form" onSubmit={handleSubmit}>
                 <label >
                     <span>Task:</span>
                     <input name="Title" type="text" onChange={setTitle} />

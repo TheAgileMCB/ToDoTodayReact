@@ -11,6 +11,27 @@ import License from './components/license';
 import Footer from './components/footer';
 
 function App() {
+
+  let results = JSON.parse(window.localStorage.results || '[]');
+  const props = results;
+
+  const setResults = (taskId, title, createdBy, startTime, dueTime, assignee, description, estimateTimeToComplete, difficultyRating, taskComplete) => {
+    this.setState({
+      taskId,
+      title,
+      createdBy,
+      startTime,
+      dueTime,
+      assignee,
+      description,
+      estimateTimeToComplete,
+      difficultyRating,
+      taskComplete
+    });
+
+    window.localStorage.result = JSON.stringify(setResults);
+  }
+
   return (
     <>
       <Header />
@@ -18,7 +39,7 @@ function App() {
         <Switch>
           <Route exact path="/">
             <ToDoList />
-            <ToDoForm />
+            <ToDoForm onReceiveResults={setResults} />
           </Route>
           <Route path="/board">
             <ToDoBoard />
