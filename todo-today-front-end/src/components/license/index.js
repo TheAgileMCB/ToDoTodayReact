@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default License = () => {
+export default function License() {
     return (
         <div className="text-body">
             <h1>MIT License</h1>
