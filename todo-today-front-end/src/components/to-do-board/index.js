@@ -1,11 +1,12 @@
 import React from 'react';
+import './board.scss';
 
 export default function ToDoBoard() {
     // var str = '8 rabbits, that\'s 16 rabbit ears';
     // str = str.replace(/(\d+)/g,function(a){return Array(+a+1).join('*')});
 
     return (
-        <>
+        <div className="board">
         <h1>The BOARD</h1>
         <div className="card">
             {/* <h1>{this.props.Title}</h1>
@@ -16,6 +17,6 @@ export default function ToDoBoard() {
             <p>{this.props.EstimatedTimeToComplete}</p> */}
             {/* <p>int to star transform goes here. consider regex?</p> */}
         </div>
-        </>
+        </div>
     );
 }
