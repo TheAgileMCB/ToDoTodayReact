@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function License() {
     return (
-        <div className="text-body">
+        <>
             <h1>MIT License</h1>
             <p>
                 <span>&copy; 2020 M. Charles Barnhart</span>
@@ -25,6 +25,6 @@ export default function License() {
                 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
                 SOFTWARE.
             </p>
-        </div>
+        </>
     );
 }

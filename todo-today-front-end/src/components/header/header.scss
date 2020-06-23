@@ -1,6 +1,7 @@
 $baseColor: linear-gradient(to bottom right, rgba(122, 122, 122, 0.9), rgba(82, 82, 82, 0.9), rgba(122, 122, 122, 0.9), rgba(148, 148, 148, 1), rgba(82, 82, 82, 0.9));
 $headerText: #fff;
-$font: 'Patrick Hand SC', cursive;
+$font: 'Patrick Hand SC', sans-serif;
+$headingFont: 'Permanent Marker', cursive;
 
 header {
     background: $baseColor;
@@ -13,6 +14,7 @@ header {
         font-family: $font;
     }
     h1 {
+        font-family: $headingFont;
         font-size: 4rem;
     }
     h3 {

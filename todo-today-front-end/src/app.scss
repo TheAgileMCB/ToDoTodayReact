@@ -1,16 +1,16 @@
 $background: rgb(255, 255, 145);
-$font: 'Patrick Hand SC', cursive;
+$font: 'Patrick Hand SC', sans-serif;
+$headingFont: 'Permanent Marker', cursive;
 
 html, body {
-  min-height: 100%;
+  min-height: 100vh;
   box-sizing: border-box;
   font-family: $font;
   font-size: 1.2rem;
 }
 
 body {
-  background: $background;
-  min-height: 100%;  
+  background: $background; 
 }
 
 #root {
@@ -20,13 +20,15 @@ body {
 }
 
 main {
-  min-height: 100%;
+  height: 100%;
   padding: 1rem;
   border-top: 1px solid yellow;
   border-bottom: 1px solid yellow;
   display: grid;
+  grid-template-columns: 1fr 2fr;
   letter-spacing: 1px;
   h1{
+    font-family: $headingFont;
     font-size: 2rem;
     margin-bottom: 1.5rem;
   }

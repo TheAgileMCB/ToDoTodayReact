@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import './form.scss';
 
 export default function Form(props) {
 
