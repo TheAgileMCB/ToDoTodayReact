@@ -2,7 +2,7 @@ import React from 'react';
 
 export default function About(){
     return (
-        <div className="text-body">
+        <>
             <h1>About Us</h1>
             <p>
                 <span>We're invested in seeing you get it To-DONE!&trade;</span>
@@ -19,6 +19,6 @@ export default function About(){
                 <br /><br />
                 Peace and Love!
             </p>
-        </div>
+        </>
     );
 }

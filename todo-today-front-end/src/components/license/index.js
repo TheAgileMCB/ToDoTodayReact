@@ -5,7 +5,7 @@ export default function License() {
         <div className="text-body">
             <h1>MIT License</h1>
             <p>
-                <span>Copyright (c) 2020 Matthew C. Barnhart</span>
+                <span>&copy; 2020 M. Charles Barnhart</span>
                 <br /><br />
                 Permission is hereby granted, free of charge, to any person obtaining a copy
                 of this software and associated documentation files (the "Software"), to deal

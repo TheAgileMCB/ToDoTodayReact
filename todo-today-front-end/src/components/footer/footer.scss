@@ -1,0 +1,31 @@
+$baseColor: linear-gradient(to bottom right, rgba(122, 122, 122, 0.9), rgba(82, 82, 82, 0.9), rgba(122, 122, 122, 0.9), rgba(148, 148, 148, 1), rgba(82, 82, 82, 0.9));
+$footerLinks: rgb(77, 56, 212);
+$linkHover: rgb(252, 94, 120);
+$font: 'Patrick Hand SC', cursive;
+
+footer {
+    // position: relative;
+    // bottom: 0;
+    background: $baseColor;
+    font-family: $font;
+    font-size: 1.5rem;
+    display: flex;
+    justify-content: space-around;
+    padding: .25rem;
+    border-top: 2px groove rgb(148, 148, 148);
+    border-bottom: 2px ridge rgb(148, 148, 148);
+    a {
+        text-decoration: none;
+        color: $footerLinks;
+        &:hover{
+            color: $linkHover;
+        }
+    }
+}
+
+.grow {
+    transition: all .2s ease-in-out;
+    &:hover {
+        transform: scale(1.3);
+    }
+}

@@ -1,0 +1,21 @@
+$baseColor: linear-gradient(to bottom right, rgba(122, 122, 122, 0.9), rgba(82, 82, 82, 0.9), rgba(122, 122, 122, 0.9), rgba(148, 148, 148, 1), rgba(82, 82, 82, 0.9));
+$headerText: #fff;
+$font: 'Patrick Hand SC', cursive;
+
+header {
+    background: $baseColor;
+    padding: .5rem;
+    border-top: 2px groove rgb(148, 148, 148);
+    border-bottom: 2px ridge rgb(148, 148, 148);
+    h1, h3 {
+        color: $headerText;
+        text-align: center;
+        font-family: $font;
+    }
+    h1 {
+        font-size: 4rem;
+    }
+    h3 {
+        font-size: 2rem;
+    }
+}
