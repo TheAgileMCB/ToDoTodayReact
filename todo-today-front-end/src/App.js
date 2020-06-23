@@ -13,23 +13,23 @@ import Footer from './components/footer';
 function App() {
   return (
     <>
-    <Header />
-    <main>
-    <ToDoList />
-    <ToDoForm />
-    <Switch>
-      <Route path="/board">
-      <ToDoBoard />
-      </Route>
-      <Route path="/about">
-        <About />
-      </Route>
-      <Route path="/license">
-        <License />
-      </Route>
-    </Switch>
-    </main>
-    <Footer />
+      <Header />
+      <main>
+        <ToDoList />
+        <ToDoForm />
+        <Switch>
+          <Route path="/board">
+            <ToDoBoard />
+          </Route>
+          <Route path="/about">
+            <About />
+          </Route>
+          <Route path="/license">
+            <License />
+          </Route>
+        </Switch>
+      </main>
+      <Footer />
     </>
   );
 }
