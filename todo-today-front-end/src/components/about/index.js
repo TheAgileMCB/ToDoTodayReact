@@ -1,6 +1,6 @@
 import React from 'react';
 
-export default About = () => {
+export default function About(){
     return (
         <div className="text-body">
             <h1>About Us</h1>
