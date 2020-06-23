@@ -1,7 +1,21 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import './form.scss';
 
 export default function Form(props) {
+
+    // let [handleSubmit, handleChange] = useForm(saveFromHook);
+
+    // function saveFromHook(formValues) {
+    //     props.createNewInviteation({
+    //         ...fromValues,
+    //         accepted: false,
+    //     });
+    // }
+
+    // let name =values.name;
+    // useEffect(() => {
+    //     document.title = 'New Invite: ${name}'
+    // }, [name]);
 
 
     const [taskId, setTaskId] = useState(0);
