@@ -13,7 +13,7 @@ import Footer from './components/footer';
 function App() {
 
   let results = JSON.parse(window.localStorage.results || '[]');
-  const props = results;
+
 
   const setResults = (taskId, title, createdBy, startTime, dueTime, assignee, description, estimateTimeToComplete, difficultyRating, taskComplete) => {
     this.setState({

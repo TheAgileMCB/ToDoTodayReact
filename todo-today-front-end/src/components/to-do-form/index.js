@@ -16,7 +16,7 @@ export default function Form(props) {
     const [taskComplete, setTaskComplete] = useState(false);
 
     function getDataFromApi() {
-        props.onReceiveResults(taskId, title, createdBy, startTime, dueTime, assignee, description, estimateTimeToComplete, difficultyRating, taskComplete);
+        this.props.onReceiveResults(taskId, title, createdBy, startTime, dueTime, assignee, description, estimateTimeToComplete, difficultyRating, taskComplete);
     }
 
     const handleSubmit = e => {
@@ -59,11 +59,11 @@ export default function Form(props) {
                 </label>
                 <label >
                     <span>Start After:</span>
-                    <input name="StartTime" type="time" onChange={setStartTime} />
+                    <input name="StartTime" type="date" onChange={setStartTime} />
                 </label>
                 <label >
                     <span>Complete By:</span>
-                    <input name="DueTime" type="time" onChange={setDueTime} />
+                    <input name="DueTime" type="date" onChange={setDueTime} />
                 </label>
                 <label >
                     <span>Assign Someone:</span>
@@ -75,7 +75,7 @@ export default function Form(props) {
                 </label>
                 <label >
                     <span>Tell them how long it will take:</span>
-                    <input name="EstimatedTimeToComplete" type="time" onChange={setEstimatedTimeToComplete} />
+                    <input name="EstimatedTimeToComplete" type="text" onChange={setEstimatedTimeToComplete} />
                 </label>
                 <label >
                     <span>Rate from 1 to 5 how difficult it might be:</span>
