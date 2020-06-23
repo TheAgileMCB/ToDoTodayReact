@@ -1,15 +1,27 @@
-//useForm(saveItem)
+import { useState } from 'react';
 
-function useFrom(onSubmit) {
+//usage: useForm(saveItem)
+
+export default function useFrom(onSubmit) {
+
     const [values, setValues] = setState({});
     // { name: 'Keith', dinnerPrefs: 'chicken' }
 
-    const handSubmit = e => {
+    const handleSubmit = e => {
         e.preventDefault();
         onSubmit(values);
     }
 
+    const handleChange = e => {
+        const { name, value } = e.target;
+        setValues(values => ({
+            ...values,
+            [name]: value,
+        }));
+    }
+
     return [
         handleSubmit,
+        handleChange
     ];
 }
