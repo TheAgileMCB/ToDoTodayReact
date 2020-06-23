@@ -10,6 +10,8 @@ export default function Form(props) {
     //         ...fromValues,
     //         accepted: false,
     //     });
+
+    // TODO: use fetch to POST
     // }
 
     // let name =values.name;

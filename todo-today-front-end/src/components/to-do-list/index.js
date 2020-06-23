@@ -1,6 +1,6 @@
 import React from 'react';
 import './list.scss';
-import useFetch from './../hooks/useFetch';
+import useFetch from './../../hooks/useFetch';
 
 export default function ToDoList(props) {
     // var str = '8 rabbits, that\'s 16 rabbit ears';
