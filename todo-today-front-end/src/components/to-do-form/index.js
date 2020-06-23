@@ -15,16 +15,16 @@ export default function Form(props) {
     const [taskComplete, setTaskComplete] = useState(false);
 
     function getDataFromApi() {
-        this.props.onReceiveResults(taskId, title, createdBy, startTime, dueTime, assignee, description, estimateTimeToComplete, difficultyRating, taskComplete);
+        props.onReceiveResults(taskId, title, createdBy, startTime, dueTime, assignee, description, estimateTimeToComplete, difficultyRating, taskComplete);
     }
 
     const handleSubmit = e => {
         e.preventDefault();
         let form = e.target;
 
-        if (this.state.Title) {
+        //if (this.state.Title) {
 
-            this.props.toggleLoading();
+            //this.props.toggleLoading();
 
             //   let request = {
             //     url: this.state.url,
@@ -40,12 +40,12 @@ export default function Form(props) {
             //   this.setState({ request, url, method });
             form.reset();
 
-            this.props.toggleLoading();
-        }
+            //this.props.toggleLoading();
+        //}
 
-        else {
-            alert('missing information');
-        }
+        //else {
+            //alert('missing information');
+        //}
     }
 
     return (
