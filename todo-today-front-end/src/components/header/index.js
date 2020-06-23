@@ -4,7 +4,7 @@ export default function Header() {
     return (
         <header>
             <h1>To-Do Today</h1>
-            <h3>Get it To-DONE!</h3>
+            <h3>Get it To-DONE!&trade;</h3>
         </header>
     )
 }

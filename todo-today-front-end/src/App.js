@@ -15,9 +15,11 @@ function App() {
     <>
       <Header />
       <main>
-        <ToDoList />
-        <ToDoForm />
         <Switch>
+          <Route exact path="/">
+            <ToDoList />
+            <ToDoForm />
+          </Route>
           <Route path="/board">
             <ToDoBoard />
           </Route>

@@ -5,7 +5,7 @@ export default function About(){
         <div className="text-body">
             <h1>About Us</h1>
             <p>
-                <span>We're invested in seeing you get it To-DONE!&reg;</span>
+                <span>We're invested in seeing you get it To-DONE!&trade;</span>
                 <br /><br />
                 Distillery ramps jean shorts intelligentsia portland, typewriter direct trade blog VHS. Ugh copper mug keffiyeh raclette trust fund art party cronut tote bag tacos woke PBR&B. Celiac hoodie shaman before they sold out pok pok glossier gentrify. Squid organic church-key, XOXO tumblr unicorn pok pok gluten-free air plant vice portland.
                 <br /><br />
