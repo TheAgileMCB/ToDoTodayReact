@@ -1,3 +1,4 @@
+![Node.js CI](https://github.com/mcbarnhart/ToDoTodayReact/workflows/Node.js%20CI/badge.svg?branch=master)
 # ToDoToday
 ### A React front end to help you GET IT DONE.
 
