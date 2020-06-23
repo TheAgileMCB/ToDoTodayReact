@@ -1,4 +1,5 @@
 import React from 'react';
+import './list.scss';
 
 export default function ToDoList() {
     // var str = '8 rabbits, that\'s 16 rabbit ears';

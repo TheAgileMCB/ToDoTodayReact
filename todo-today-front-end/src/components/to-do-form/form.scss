@@ -1,7 +1,11 @@
 .form-wrapper{
+    // border-top: 1px solid yellow;
+    // border-bottom: 1px solid yellow;
     form{
-   
         display: flex;
         flex-direction: column;
+        label {
+            margin: .25rem;
+        }
     }
 }
