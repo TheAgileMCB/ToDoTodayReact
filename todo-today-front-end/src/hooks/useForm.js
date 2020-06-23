@@ -22,6 +22,7 @@ export default function useFrom(onSubmit) {
 
     return [
         handleSubmit,
-        handleChange
+        handleChange,
+        values
     ];
 }
