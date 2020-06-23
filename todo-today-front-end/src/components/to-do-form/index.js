@@ -20,19 +20,19 @@ export default function Form(props) {
     // }, [name]);
 
 
-    const [taskId, setTaskId] = useState(0);
+    const [id, setId] = useState(0);
     const [title, setTitle] = useState("");
-    const [createdBy, setCreatedBy] = useState("");
-    const [startTime, setStartTime] = useState(Date.now());
-    const [dueTime, setDueTime] = useState(Date.now());
-    const [assignee, setAssignee] = useState("");
-    const [description, setDescription] = useState("");
-    const [estimateTimeToComplete, setEstimatedTimeToComplete] = useState("");
-    const [difficultyRating, setDifficultyRating] = useState(1);
-    const [taskComplete, setTaskComplete] = useState(false);
+    //const [createdBy, setCreatedBy] = useState("");
+    //const [startTime, setStartTime] = useState(Date.now());
+    //const [dueTime, setDueTime] = useState(Date.now());
+    const [assignedTo, setAssignedTo] = useState("");
+    //const [description, setDescription] = useState("");
+    //const [estimateTimeToComplete, setEstimatedTimeToComplete] = useState("");
+    const [difficulty, setDifficulty] = useState(1);
+    const [complete, setComplete] = useState(false);
 
     function getDataFromApi() {
-        this.props.onReceiveResults(taskId, title, createdBy, startTime, dueTime, assignee, description, estimateTimeToComplete, difficultyRating, taskComplete);
+        props.onReceiveResults(id, title, assignedTo, difficulty, complete);
     }
 
     const handleSubmit = e => {
@@ -74,33 +74,16 @@ export default function Form(props) {
                     <input name="Title" type="text" onChange={setTitle} />
                 </label>
                 <label >
-                    <span>Start After:</span>
-                    <input name="StartTime" type="date" onChange={setStartTime} />
-                </label>
-                <label >
-                    <span>Complete By:</span>
-                    <input name="DueTime" type="date" onChange={setDueTime} />
-                </label>
-                <label >
                     <span>Assign Someone:</span>
-                    <input name="Assignee" type="text" onChange={setAssignee} />
-                </label>
-                <label >
-                    <span>Describe it:</span>
-                    <input name="Description" type="text" onChange={setDescription} />
-                </label>
-                <label >
-                    <span>Tell them how long it will take:</span>
-                    <input name="EstimatedTimeToComplete" type="text" onChange={setEstimatedTimeToComplete} />
+                    <input name="Assignee" type="text" onChange={setAssignedTo} />
                 </label>
                 <label >
                     <span>Rate from 1 to 5 how difficult it might be:</span>
-                    <input name="DifficultyTating" type="number" onChange={setDifficultyRating} />
+                    <input name="DifficultyTating" type="number" onChange={setDifficulty} />
                 </label>
                 <label >
-                    <input name="TaskId" type="hidden" value="1" onChange={setTaskId} />
-                    <input name="CreatedBy" type="hidden" value="userId props?" onChange={setCreatedBy} />
-                    <input name="taskComplete" type="hidden" value="false" onChange={setTaskComplete} />
+                    <input name="TaskId" type="hidden" value="1" onChange={setId} />
+                    <input name="taskComplete" type="hidden" value="false" onChange={setComplete} />
                 </label>
                 <button type="submit">Get it To-DONE!&trade;</button>
             </form>
