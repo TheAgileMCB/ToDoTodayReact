@@ -51,6 +51,7 @@ export default function Form(props) {
 
     return (
         <div className="form-wrapper">
+            <h1>the TASK</h1>
             <form data-testid="form" className="form" onSubmit={handleSubmit}>
                 <label >
                     <span>Task:</span>
@@ -77,7 +78,7 @@ export default function Form(props) {
                     <input name="EstimatedTimeToComplete" type="time" onChange={setEstimatedTimeToComplete} />
                 </label>
                 <label >
-                    <span>Tell them how difficult it might be:</span>
+                    <span>Rate from 1 to 5 how difficult it might be:</span>
                     <input name="DifficultyTating" type="number" onChange={setDifficultyRating} />
                 </label>
                 <label >
