@@ -5,7 +5,7 @@ import './index.scss';
 import App from './app';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './contexts/theme';
-import { SettingsProvider } from './contexts/settings';
+import { SettingsProvider } from './contexts/settings.js';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
