@@ -1,11 +1,16 @@
 import React from 'react';
 import './list.scss';
+import goldStar from '../../assets/gold-stars.png';
 import useFetch from './../../hooks/useFetch';
 
 export default function ToDoList(props) {
     // var str = '8 rabbits, that\'s 16 rabbit ears';
     // str = str.replace(/(\d+)/g,function(a){return Array(+a+1).join('*')});
     console.log(props.data);
+
+    function starmaker(num) {
+        return [1,2,3,4,5].map(x => x <= num ? <img key={x} src={goldStar} style={{width: "1rem"}} /> : null);
+    }
 
     return (
         <div className="list">
@@ -14,9 +19,7 @@ export default function ToDoList(props) {
                 <div className="list-item" key={index}>
                     <h2>{item.title}</h2>
                     <h3>{item.assignedTo}</h3>
-                    {/* for (let i = 0; i < {item.difficulty}; i++) {
-                        <img src="./../../assets/gold-star.png" />
-                       } */}
+                    <span>{starmaker(item.difficulty)}</span>
                 </div>
             ))}
         </div>
