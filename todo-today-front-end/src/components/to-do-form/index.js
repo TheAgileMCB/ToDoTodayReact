@@ -22,16 +22,17 @@ export default function Form(props) {
 
     const [id, setId] = useState(0);
     const [title, setTitle] = useState("");
-    //const [createdBy, setCreatedBy] = useState("");
-    //const [startTime, setStartTime] = useState(Date.now());
-    //const [dueTime, setDueTime] = useState(Date.now());
     const [assignedTo, setAssignedTo] = useState("");
-    //const [description, setDescription] = useState("");
-    //const [estimateTimeToComplete, setEstimatedTimeToComplete] = useState("");
     const [difficulty, setDifficulty] = useState(1);
     const [complete, setComplete] = useState(false);
 
     function getDataFromApi() {
+        // let data = {id:id, 
+        //         title:title, 
+        //         assignedTo:assignedTo, 
+        //         difficulty:difficulty, 
+        //         complete:complete
+        //     }
         props.onReceiveResults(id, title, assignedTo, difficulty, complete);
     }
 
@@ -39,29 +40,27 @@ export default function Form(props) {
         e.preventDefault();
         let form = e.target;
 
-        //if (this.state.Title) {
+        //this.props.toggleLoading();
 
-            //this.props.toggleLoading();
+        //   let request = {
+        //     url: this.state.url,
+        //     method: this.state.method,
+        //   };
 
-            //   let request = {
-            //     url: this.state.url,
-            //     method: this.state.method,
-            //   };
+        getDataFromApi();
 
-            getDataFromApi();
+        // Clear old settings
+        //   let url = '';
+        //   let method = '';
 
-            // Clear old settings
-            //   let url = '';
-            //   let method = '';
+        //   this.setState({ request, url, method });
+        form.reset();
 
-            //   this.setState({ request, url, method });
-            form.reset();
-
-            //this.props.toggleLoading();
+        //this.props.toggleLoading();
         //}
 
         //else {
-            //alert('missing information');
+        //alert('missing information');
         //}
     }
 
@@ -69,22 +68,28 @@ export default function Form(props) {
         <div className="form-wrapper">
             <h1>the TASK</h1>
             <form data-testid="form" className="form" onSubmit={handleSubmit}>
-                <label >
-                    <span>Task:</span>
-                    <input name="Title" type="text" onChange={setTitle} />
-                </label>
-                <label >
-                    <span>Assign Someone:</span>
-                    <input name="Assignee" type="text" onChange={setAssignedTo} />
-                </label>
-                <label >
-                    <span>Rate from 1 to 5 how difficult it might be:</span>
-                    <input name="DifficultyTating" type="number" onChange={setDifficulty} />
-                </label>
-                <label >
-                    <input name="TaskId" type="hidden" value="1" onChange={setId} />
-                    <input name="taskComplete" type="hidden" value="false" onChange={setComplete} />
-                </label>
+                <label >Task:</label>
+                    <input required name="Title" type="text" value={title} onChange={e => setTitle(e.target.value)} />
+                <label >Assign Someone:</label>
+                    <input required name="Assignee" type="text" value={assignedTo} onChange={e => setAssignedTo(e.target.value)} />
+
+                <fieldset className="radio">
+                    <legend>Rate how difficult it might be:</legend>
+                    <label>1 Star</label>
+                    <input id="1star" name="difficulty" type="radio" value="1" onChange={e => setDifficulty(e.target.value)} />
+                    <label>2 Stars</label>
+                    <input id="2star" name="difficulty" type="radio" value="2" onChange={e => setDifficulty(e.target.value)} />
+                    <label>3 Stars</label>
+                    <input id="3star" name="difficulty" type="radio" value="3" onChange={e => setDifficulty(e.target.value)} />
+                    <label>4 Stars</label>
+                    <input id="4star" name="difficulty" type="radio" value="4" onChange={e => setDifficulty(e.target.value)} />
+                    <label>5 Stars</label>
+                    <input id="5star" name="difficulty" type="radio" value="5" onChange={e => setDifficulty(e.target.value)} />
+                </fieldset>
+
+                    <input name="TaskId" type="hidden" value={id} onChange={e => setId(e.target.value + 1)} />
+                    <input name="taskComplete" type="hidden" value={complete} onChange={e => setComplete(e.target.value)} />
+
                 <button type="submit">Get it To-DONE!&trade;</button>
             </form>
         </div>

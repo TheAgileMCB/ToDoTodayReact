@@ -5,17 +5,20 @@ import useFetch from './../../hooks/useFetch';
 export default function ToDoList(props) {
     // var str = '8 rabbits, that\'s 16 rabbit ears';
     // str = str.replace(/(\d+)/g,function(a){return Array(+a+1).join('*')});
+    console.log(props.data);
 
     return (
         <div className="list">
             <h1>the LIST</h1>
-            <ul>
-                {/* {history.map(item => {
-                <li><h2>{item.title}</h2>
-                <h3><span>{item.startTime}</span><span>{this.props.DueTime}</span></h3>
-                <h3>{item.assignee}</h3></li>
-            })} */}
-            </ul>
+                {props.data.map((item, index) => (
+                    <div key ={index}>
+                        <h2>{item.title}</h2>
+                        <h3>{item.assignedTo}</h3>
+                        {/* for (let i = 0; i < {item.difficulty}; i++) {
+                        <img src="./../../assets/gold-star.png" />
+                       } */}
+                    </div>
+                ))}
         </div>
     );
 }

@@ -2,7 +2,7 @@ import { useState } from 'react';
 
 //usage: useForm(saveItem)
 
-export default function useFrom(onSubmit) {
+export default function useForm(onSubmit) {
 
     const [values, setValues] = setState({});
     // { name: 'Keith', dinnerPrefs: 'chicken' }
