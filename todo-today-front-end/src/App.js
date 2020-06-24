@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
+import useTheme from './context/theme-context';
 import './app.scss';
 
 import Header from './components/header';
@@ -11,6 +12,8 @@ import License from './components/license';
 import Footer from './components/footer';
 
 function App() {
+
+  const { mode } = useTheme();
   //data = JSON.parse(window.localStorage.results || '[]');
 
   const [dataList, setDataList] = useState([]);
@@ -26,7 +29,7 @@ function App() {
   }
 
   return (
-    <>
+    <div className={mode}>
       <Header />
       <main>
         <Switch>
@@ -46,7 +49,7 @@ function App() {
         </Switch>
       </main>
       <Footer />
-    </>
+    </div>
   );
 }
 
