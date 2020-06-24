@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from "react";
+import goldStar from '../../assets/gold-stars.png';
 import './form.scss';
 
 export default function Form(props) {
@@ -62,27 +63,34 @@ export default function Form(props) {
         <div className="form-wrapper">
             <h1>the TASK</h1>
             <form data-testid="form" className="form" onSubmit={handleSubmit}>
-                <label >Task:</label>
+                <label >Task:
                     <input required name="Title" type="text" value={title} onChange={e => setTitle(e.target.value)} />
-                <label >Assign Someone:</label>
+                </label>
+                <label >Assign Someone:
                     <input required name="Assignee" type="text" value={assignedTo} onChange={e => setAssignedTo(e.target.value)} />
+                </label>
 
                 <fieldset className="radio">
                     <legend>Rate how difficult it might be:</legend>
-                    <label>1 Star</label>
+                    <label><img src={goldStar} style={{width: "3rem"}} />
                     <input id="1star" name="difficulty" type="radio" value="1" onChange={e => setDifficulty(e.target.value)} />
-                    <label>2 Stars</label>
+                    </label>
+                    <label><img src={goldStar} style={{width: "3rem"}} />
                     <input id="2star" name="difficulty" type="radio" value="2" onChange={e => setDifficulty(e.target.value)} />
-                    <label>3 Stars</label>
+                    </label>
+                    <label><img src={goldStar} style={{width: "3rem"}} />
                     <input id="3star" name="difficulty" type="radio" value="3" onChange={e => setDifficulty(e.target.value)} />
-                    <label>4 Stars</label>
+                    </label>
+                    <label><img src={goldStar} style={{width: "3rem"}} />
                     <input id="4star" name="difficulty" type="radio" value="4" onChange={e => setDifficulty(e.target.value)} />
-                    <label>5 Stars</label>
+                    </label>
+                    <label><img src={goldStar} style={{width: "3rem"}} />
                     <input id="5star" name="difficulty" type="radio" value="5" onChange={e => setDifficulty(e.target.value)} />
+                    </label>
                 </fieldset>
 
-                    <input name="TaskId" type="hidden" value={id} onChange={e => setId(e.target.value)} />
-                    <input name="taskComplete" type="hidden" value={complete} onChange={e => setComplete(e.target.value)} />
+                <input name="TaskId" type="hidden" value={id} onChange={e => setId(e.target.value)} />
+                <input name="taskComplete" type="hidden" value={complete} onChange={e => setComplete(e.target.value)} />
 
                 <button type="submit">Get it To-DONE!&trade;</button>
             </form>

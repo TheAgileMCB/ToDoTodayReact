@@ -8,8 +8,28 @@
     form{
         display: flex;
         flex-direction: column;
+        fieldset {
+            text-align: center;
+            label{
+                opacity: 0.7;
+                &:hover {
+                    opacity: 1;
+                }
+            }
+        }
         label {
-            margin: .25rem;
+            margin: .5rem;
+        }
+        [type=checkbox]{
+            display: none;
+        }
+        button {
+            margin: 1rem;
+            border-radius: 10px;
+            border: 2px outset rgb(148, 148, 148);
+            &:hover {
+                border: 2px inset rgb(148, 148, 148);
+            }
         }
     }
 }
