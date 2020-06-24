@@ -17,7 +17,7 @@ export class ThemeProvider extends React.Component {
     toggleMode = () => {
         this.setState(state => ({
             mode: state.mode === 'light' ? 'dark' : 'light'
-        }))
+        }));
     }
 
     render() {

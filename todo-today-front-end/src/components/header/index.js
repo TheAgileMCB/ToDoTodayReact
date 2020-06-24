@@ -2,7 +2,7 @@ import React from 'react';
 import { NavLink } from 'react-router-dom';
 import './header.scss';
 
-import useTheme from '../../context/theme-context';
+import useTheme from '../../contexts/theme';
 
 export default function Header() {
     const theme = useTheme();

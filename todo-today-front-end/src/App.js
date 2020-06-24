@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
-import useTheme from './context/theme-context';
+import useTheme from './contexts/theme';
 import './app.scss';
 
 import Header from './components/header';
