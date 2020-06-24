@@ -30,5 +30,5 @@ export class ThemeProvider extends React.Component {
 }
 
 export default function useTheme() {
-    useContext(ThemeContext);
+    return useContext(ThemeContext);
 }
