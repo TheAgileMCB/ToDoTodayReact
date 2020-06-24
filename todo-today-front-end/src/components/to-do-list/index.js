@@ -10,15 +10,15 @@ export default function ToDoList(props) {
     return (
         <div className="list">
             <h1>the LIST</h1>
-                {props.data.map((item, index) => (
-                    <div key ={index}>
-                        <h2>{item.title}</h2>
-                        <h3>{item.assignedTo}</h3>
-                        {/* for (let i = 0; i < {item.difficulty}; i++) {
+            {props.data.map((item, index) => (
+                <div className="list-item" key={index}>
+                    <h2>{item.title}</h2>
+                    <h3>{item.assignedTo}</h3>
+                    {/* for (let i = 0; i < {item.difficulty}; i++) {
                         <img src="./../../assets/gold-star.png" />
                        } */}
-                    </div>
-                ))}
+                </div>
+            ))}
         </div>
     );
 }

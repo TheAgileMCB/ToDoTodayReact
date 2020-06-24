@@ -27,12 +27,6 @@ export default function Form(props) {
     const [complete, setComplete] = useState(false);
 
     function getDataFromApi() {
-        // let data = {id:id, 
-        //         title:title, 
-        //         assignedTo:assignedTo, 
-        //         difficulty:difficulty, 
-        //         complete:complete
-        //     }
         props.onReceiveResults(id, title, assignedTo, difficulty, complete);
     }
 
@@ -87,7 +81,7 @@ export default function Form(props) {
                     <input id="5star" name="difficulty" type="radio" value="5" onChange={e => setDifficulty(e.target.value)} />
                 </fieldset>
 
-                    <input name="TaskId" type="hidden" value={id} onChange={e => setId(e.target.value + 1)} />
+                    <input name="TaskId" type="hidden" value={id} onChange={e => setId(e.target.value)} />
                     <input name="taskComplete" type="hidden" value={complete} onChange={e => setComplete(e.target.value)} />
 
                 <button type="submit">Get it To-DONE!&trade;</button>

@@ -17,7 +17,7 @@ function App() {
 
 
   const setResults = (id, title, assignedTo, difficulty, complete) => {
-    let data = [id, title, assignedTo, difficulty, complete];
+    let data = {id, title, assignedTo, difficulty, complete};
 
     let dataListWithNewOne = [...dataList, data];
     setDataList(dataListWithNewOne);
