@@ -5,24 +5,20 @@ import { useState } from 'react';
 export default function useForm(onSubmit) {
 
     const [values, setValues] = setState({});
-    // { name: 'Keith', dinnerPrefs: 'chicken' }
 
     const handleSubmit = e => {
-        e.preventDefault();
+        if (e) e.preventDefault();
         onSubmit(values);
-    }
+    };
 
     const handleChange = e => {
-        const { name, value } = e.target;
-        setValues(values => ({
-            ...values,
-            [name]: value,
-        }));
-    }
+        e.persist();
+        setValues(vales => ({ ...values, [e.target.name]: e.target.value }));
+    };
 
-    return [
+    return {
         handleSubmit,
         handleChange,
         values
-    ];
-}
+    };
+};
