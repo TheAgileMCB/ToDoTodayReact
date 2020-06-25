@@ -1,8 +1,18 @@
+$listBackground: steelblue;
+$emphasisLines: rgb(252, 93, 120);
 $font: 'Patrick Hand SC', sans-serif;
 $headingFont: 'Permanent Marker', cursive;
 
+@mixin listContent($listBackground) {
+    background: $listBackground;
+}
+
+@mixin lines($emphasisLines) {
+    border-color: $emphasisLines;
+}
+
 .list {
-background: steelblue;
+background: $listBackground;
 border-right: 3px double #fff;
 padding: .5rem;
 height: 100vh;
@@ -11,10 +21,12 @@ height: 100vh;
         margin: .25rem;
         padding: .25rem;
         text-align: center;
-        border-bottom: 3px double rgb(252, 93, 120);
+        border-bottom: 3px double;
+        border-color: $emphasisLines;
     }
     .list-item {
-        border-bottom: 3px double rgb(252, 93, 120);
+        border-bottom: 3px double;
+        border-color: $emphasisLines;
         margin: .25rem;
         h2 {
             font-family: $headingFont;;
@@ -24,3 +36,11 @@ height: 100vh;
         }
     }
 }
+
+.dark .list {
+    @include listContent(rgb(9, 0, 61));
+    h1, .list-item {
+        @include lines(rgb(235, 252, 0))
+    }
+}
+

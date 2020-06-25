@@ -7,7 +7,7 @@ export class ThemeProvider extends React.Component {
         super(props);
 
         this.state = {
-            mode: props.defaultMode || 'light',
+            mode: props.defaultMode || ' ',
 
             // add FUNCTIONS to STATE
             toggleMode: this.toggleMode,
@@ -16,7 +16,7 @@ export class ThemeProvider extends React.Component {
 
     toggleMode = () => {
         this.setState(state => ({
-            mode: state.mode === 'light' ? 'dark' : 'light'
+            mode: state.mode === ' ' ? 'dark' : ' '
         }));
     }
 
