@@ -15,7 +15,7 @@ $headingFont: 'Permanent Marker', cursive;
 background: $listBackground;
 border-right: 3px double #fff;
 padding: .5rem;
-height: 100vh;
+min-height: 100vh;
     h1 {
         color: #fff;
         margin: .25rem;

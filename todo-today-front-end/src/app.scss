@@ -26,9 +26,10 @@ body {
 }
 
 main {
-  height: 100%;
+  min-height: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
   grid-gap: 1rem;
   letter-spacing: 1px;
   h1{

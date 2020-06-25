@@ -17,8 +17,9 @@ $headingFont: 'Permanent Marker', cursive;
 }
 
 footer {
-    // position: relative;
+    // position: fixed;
     // bottom: 0;
+    width: 100%;
     background: $baseColor;
     font-family: $font;
     font-size: 1.5rem;
