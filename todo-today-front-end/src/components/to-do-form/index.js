@@ -7,7 +7,7 @@ export default function Form(props) {
 
     const { handleChange, handleSubmit } = useForm(onSubmit);
 
-    const onSubmit = formValues => {
+    function onSubmit(formValues) {
        props.handleSubmit({
            ...formValues,
            difficulty: formValues.difficulty ? parseInt(formValues.difficulty) : 5,
