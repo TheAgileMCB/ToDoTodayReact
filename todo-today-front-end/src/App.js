@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { useState } from 'react';
 import { Switch, Route } from 'react-router-dom';
 import './app.scss';
 
@@ -11,25 +11,18 @@ import License from './components/license';
 import Footer from './components/footer';
 
 function App() {
+  //data = JSON.parse(window.localStorage.results || '[]');
 
-  let results = JSON.parse(window.localStorage.results || '[]');
+  const [dataList, setDataList] = useState([]);
 
 
-  const setResults = (taskId, title, createdBy, startTime, dueTime, assignee, description, estimateTimeToComplete, difficultyRating, taskComplete) => {
-    this.setState({
-      taskId,
-      title,
-      createdBy,
-      startTime,
-      dueTime,
-      assignee,
-      description,
-      estimateTimeToComplete,
-      difficultyRating,
-      taskComplete
-    });
+  const setResults = (id, title, assignedTo, difficulty, complete) => {
+    let data = {id, title, assignedTo, difficulty, complete};
 
-    window.localStorage.result = JSON.stringify(setResults);
+    let dataListWithNewOne = [...dataList, data];
+    setDataList(dataListWithNewOne);
+
+    //window.localStorage.result = JSON.stringify(setResults);
   }
 
   return (
@@ -38,7 +31,7 @@ function App() {
       <main>
         <Switch>
           <Route exact path="/">
-            <ToDoList />
+            <ToDoList data={dataList}/>
             <ToDoForm onReceiveResults={setResults} />
           </Route>
           <Route path="/board">

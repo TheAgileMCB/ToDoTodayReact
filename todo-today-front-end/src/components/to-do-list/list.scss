@@ -1,14 +1,25 @@
+$font: 'Patrick Hand SC', sans-serif;
+$headingFont: 'Permanent Marker', cursive;
+
 .list {
 background: steelblue;
 border-right: 3px double #fff;
-margin-left: -1rem;
-margin-top: -1rem;
-margin-bottom: -1rem;
+padding: .5rem;
 height: 100vh;
-h1 {
-    color: #fff;
-    margin: .25rem;
-    text-align: center;
-    border-bottom: 3px doulbe rgb(252, 93, 120);
-}
+    h1 {
+        color: #fff;
+        margin: .25rem;
+        text-align: center;
+        border-bottom: 3px double rgb(252, 93, 120);
+    }
+    .list-item {
+        border-bottom: 3px double rgb(252, 93, 120);
+        margin: .25rem;
+        h2 {
+            font-family: $headingFont;;
+        }
+        h3 {
+            text-align: right;
+        }
+    }
 }
