@@ -29,10 +29,24 @@ min-height: 100vh;
         border-color: $emphasisLines;
         margin: .25rem;
         h2 {
-            font-family: $headingFont;;
+            font-size: 1rem;
+            font-family: $headingFont;
+            margin-bottom: 0.25rem;
         }
         h3 {
+            font-size: 1rem;
             text-align: right;
+        }
+        .list2 {
+            margin-bottom: 0.25rem;
+            display: flex;
+            justify-content: space-between;
+        }
+        .list3 {
+            font-size: 1rem;
+            display: flex;
+            justify-content: space-between;
+            margin-bottom: 0.25rem;
         }
     }
 }

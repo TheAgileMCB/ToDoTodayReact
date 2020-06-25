@@ -20,16 +20,19 @@ export default function ToDoList(props) {
                         className={`completed-${item.completed.toString()} list-item`}
                         key={item.id}
                     >
-                        {/* <div className="list-item"> */}
                         <h2 onClick={() => props.handleCompleted(item.id)}>{item.title}</h2>
-                        <h3>{item.assignedTo}</h3>
-                        <span>{starmaker(item.difficulty)}</span>
-                        <Link to={`/todo/${item.id}`}>
-                            Details
+                        <div className="list2">
+                            <span>{starmaker(item.difficulty)}</span>
+                            <h3>{item.assignedTo}</h3>
+                        </div>
+                        <div className="list3">
+                            <Link to={`/todo/${item.id}`}>
+                                Details
                         </Link>
-                        <button onClick={() => props.handleDelete(item.id)}>
-                            Delete
+                            <button onClick={() => props.handleDelete(item.id)}>
+                                Delete
                         </button>
+                        </div>
                     </li>
                 ))}
             </ul>
