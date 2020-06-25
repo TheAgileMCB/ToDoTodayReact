@@ -4,7 +4,7 @@ import { useState } from 'react';
 
 export default function useForm(onSubmit) {
 
-    const [values, setValues] = setState({});
+    const [values, setValues] = useState({});
 
     const handleSubmit = e => {
         if (e) e.preventDefault();
@@ -13,7 +13,7 @@ export default function useForm(onSubmit) {
 
     const handleChange = e => {
         e.persist();
-        setValues(vales => ({ ...values, [e.target.name]: e.target.value }));
+        setValues(values => ({ ...values, [e.target.name]: e.target.value }));
     };
 
     return {
