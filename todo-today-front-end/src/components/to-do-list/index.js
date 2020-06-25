@@ -8,7 +8,7 @@ export default function ToDoList(props) {
     const list = props.list || [];
 
     function starmaker(num) {
-        return [1, 2, 3, 4, 5].map(x => x <= num ? <img key={x} src={goldStar} style={{ width: "1rem" }} /> : null);
+        return [1, 2, 3, 4, 5].map(x => x <= num ? <img key={x} src={goldStar} style={{ width: "1rem" }} alt="A gold star!" /> : null);
     }
 
     return (

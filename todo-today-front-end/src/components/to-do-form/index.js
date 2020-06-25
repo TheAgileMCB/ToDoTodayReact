@@ -27,19 +27,19 @@ export default function Form(props) {
 
                 <fieldset className="radio">
                     <legend>Rate how difficult it might be:</legend>
-                    <label><img src={goldStar} style={{width: "3rem"}} />
+                    <label><img src={goldStar} style={{width: "3rem"}} alt="A gold star!" />
                     <input id="1star" name="difficulty" type="radio" value="1" onChange={handleChange} />
                     </label>
-                    <label><img src={goldStar} style={{width: "3rem"}} />
+                    <label><img src={goldStar} style={{width: "3rem"}} alt="A gold star!" />
                     <input id="2star" name="difficulty" type="radio" value="2" onChange={handleChange} />
                     </label>
-                    <label><img src={goldStar} style={{width: "3rem"}} />
+                    <label><img src={goldStar} style={{width: "3rem"}} alt="A gold star!" />
                     <input id="3star" name="difficulty" type="radio" value="3" onChange={handleChange} />
                     </label>
-                    <label><img src={goldStar} style={{width: "3rem"}} />
+                    <label><img src={goldStar} style={{width: "3rem"}} alt="A gold star!" />
                     <input id="4star" name="difficulty" type="radio" value="4" onChange={handleChange} />
                     </label>
-                    <label><img src={goldStar} style={{width: "3rem"}} />
+                    <label><img src={goldStar} style={{width: "3rem"}} alt="A gold star!" />
                     <input id="5star" name="difficulty" type="radio" value="5" onChange={handleChange} />
                     </label>
                 </fieldset>
