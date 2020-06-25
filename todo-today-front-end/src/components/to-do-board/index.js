@@ -21,7 +21,7 @@ export default function ToDoBoard(props) {
                     >
                         <h2 onClick={() => props.handleCompleted(item.id)}>{item.title}</h2>
                         <div className="list2">
-                            <span>{starmaker(item.difficulty)}</span>
+                            <div className="stars">{starmaker(item.difficulty)}</div>
                             <h3>{item.assignedTo}</h3>
                         </div>
                         <div className="list3">
