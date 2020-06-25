@@ -110,7 +110,11 @@ function App() {
             <ToDoForm handleSubmit={_addItem} />
           </Route>
           <Route path="/board">
-            <ToDoBoard />
+            <ToDoBoard 
+            list={dataList}
+            handleCompleted={_toggleCompleted}
+            handleDelete={_deleteItem}
+            />
           </Route>
           <Route path="/about">
             <About />

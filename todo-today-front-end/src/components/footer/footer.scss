@@ -10,11 +10,14 @@ $headingFont: 'Permanent Marker', cursive;
 
 @mixin linkColor ($footerLinks){
     color: $footerLinks;
+    &:hover {
+        color: darken($footerLinks, 20%);
+    }
 }
 
-@mixin hoverColor ($linkHover){
-    color: $linkHover;
-}
+// @mixin hoverColor ($linkHover){
+//     color: $linkHover;
+// }
 
 footer {
     // position: fixed;
@@ -49,8 +52,6 @@ footer {
     @include headContent (linear-gradient(to bottom right, rgba(19, 19, 19, 0.9), rgba(5, 5, 5, 0.9), rgba(27, 23, 23, 0.9), rgb(37, 34, 34), rgba(17, 16, 16, 0.9)));
     a {
         @include linkColor (rgb(247, 255, 130));
-        &:hover {
-            @include hoverColor (rgb(235, 252, 0));
-        }
+        
     }
 }

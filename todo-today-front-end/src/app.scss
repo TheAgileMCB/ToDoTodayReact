@@ -8,6 +8,15 @@ $headingFont: 'Permanent Marker', cursive;
   color: $color-main;
 }
 
+@function set-text-color($background) {
+  @if (lightness( $background) > 40) {
+    @return #000;
+  }
+  @else {
+    @return #fff;
+  }
+}
+
 html, body {
   min-height: 100vh;
   box-sizing: border-box;
@@ -16,7 +25,8 @@ html, body {
 }
 
 body {
-  background: $background; 
+  background: $background;
+  color: set-text-color($background); 
 }
 
 #root {

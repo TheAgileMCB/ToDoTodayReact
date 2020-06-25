@@ -1,22 +1,40 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import './board.scss';
+import goldStar from '../../assets/gold-stars.png';
 
-export default function ToDoBoard() {
-    // var str = '8 rabbits, that\'s 16 rabbit ears';
-    // str = str.replace(/(\d+)/g,function(a){return Array(+a+1).join('*')});
+export default function ToDoBoard(props) {
+    const list = props.list || [];
+
+    function starmaker(num) {
+        return [1, 2, 3, 4, 5].map(x => x <= num ? <img key={x} src={goldStar} style={{ width: "1rem" }} alt="A gold star!" /> : null);
+    }
 
     return (
         <div className="board">
-        <h1>The BOARD</h1>
-        <div className="card">
-            {/* <h1>{this.props.Title}</h1>
-            <p>{this.props.CreatedBy}</p>
-            <h2><span>{this.props.StartTime}</span><span>{this.props.DueTime}</span></h2>
-            <h2>{this.props.Assignee}</h2>
-            <p>{this.props.Description}</p>
-            <p>{this.props.EstimatedTimeToComplete}</p> */}
-            {/* <p>int to star transform goes here. consider regex?</p> */}
-        </div>
+            <h1>The BOARD</h1>
+            <div className="board-div">
+                {list.map(item => (
+                    <div
+                        className={`completed-${item.completed.toString()} card`}
+                        key={item.id}
+                    >
+                        <h2 onClick={() => props.handleCompleted(item.id)}>{item.title}</h2>
+                        <div className="list2">
+                            <span>{starmaker(item.difficulty)}</span>
+                            <h3>{item.assignedTo}</h3>
+                        </div>
+                        <div className="list3">
+                            <Link to={`/todo/${item.id}`}>
+                                Details
+                            </Link>
+                            <button onClick={() => props.handleDelete(item.id)}>
+                                Delete
+                            </button>
+                        </div>
+                    </div>
+                ))}
+            </div>
         </div>
     );
 }
