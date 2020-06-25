@@ -1,6 +1,12 @@
 $background: rgb(255, 255, 145);
+$color-main: #000;
 $font: 'Patrick Hand SC', sans-serif;
 $headingFont: 'Permanent Marker', cursive;
+
+@mixin content($background, $color-main) {
+  background: $background;
+  color: $color-main;
+}
 
 html, body {
   min-height: 100vh;
@@ -20,9 +26,10 @@ body {
 }
 
 main {
-  height: 100%;
+  min-height: 100%;
   display: grid;
   grid-template-columns: 1fr 2fr;
+  grid-template-rows: auto;
   grid-gap: 1rem;
   letter-spacing: 1px;
   h1{
@@ -30,4 +37,8 @@ main {
     font-size: 2rem;
     margin-bottom: 1.5rem;
   }
+}
+
+.dark {
+  @include content (linear-gradient(to bottom right, rgba(66,0, 0, 0.9), rgba(66,0, 0, 0.9), rgba(48, 11, 11, 0.9), rgb(109, 1, 1), rgba(66,0, 0, 0.9)), #fff);
 }

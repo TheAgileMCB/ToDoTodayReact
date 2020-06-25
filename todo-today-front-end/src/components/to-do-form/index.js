@@ -1,62 +1,17 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
+import useForm from'../../hooks/useForm';
 import goldStar from '../../assets/gold-stars.png';
 import './form.scss';
 
 export default function Form(props) {
 
-    // let [handleSubmit, handleChange] = useForm(saveFromHook);
+    const { handleChange, handleSubmit } = useForm(onSubmit);
 
-    // function saveFromHook(formValues) {
-    //     props.createNewInviteation({
-    //         ...fromValues,
-    //         accepted: false,
-    //     });
-
-    // TODO: use fetch to POST
-    // }
-
-    // let name =values.name;
-    // useEffect(() => {
-    //     document.title = 'New Invite: ${name}'
-    // }, [name]);
-
-
-    const [id, setId] = useState(0);
-    const [title, setTitle] = useState("");
-    const [assignedTo, setAssignedTo] = useState("");
-    const [difficulty, setDifficulty] = useState(1);
-    const [complete, setComplete] = useState(false);
-
-    function getDataFromApi() {
-        props.onReceiveResults(id, title, assignedTo, difficulty, complete);
-    }
-
-    const handleSubmit = e => {
-        e.preventDefault();
-        let form = e.target;
-
-        //this.props.toggleLoading();
-
-        //   let request = {
-        //     url: this.state.url,
-        //     method: this.state.method,
-        //   };
-
-        getDataFromApi();
-
-        // Clear old settings
-        //   let url = '';
-        //   let method = '';
-
-        //   this.setState({ request, url, method });
-        form.reset();
-
-        //this.props.toggleLoading();
-        //}
-
-        //else {
-        //alert('missing information');
-        //}
+    function onSubmit(formValues) {
+       props.handleSubmit({
+           ...formValues,
+           difficulty: formValues.difficulty ? parseInt(formValues.difficulty) : 5,
+       });
     }
 
     return (
@@ -64,33 +19,33 @@ export default function Form(props) {
             <h1>the TASK</h1>
             <form data-testid="form" className="form" onSubmit={handleSubmit}>
                 <label >Task:
-                    <input required name="Title" type="text" value={title} onChange={e => setTitle(e.target.value)} />
+                    <input required name="title" type="text" placeholder="Task to get to-DONE&trade;" onChange={handleChange} />
                 </label>
                 <label >Assign Someone:
-                    <input required name="Assignee" type="text" value={assignedTo} onChange={e => setAssignedTo(e.target.value)} />
+                    <input required name="assignedTo" type="title" placeholder="Name the one who will get it to-DONE&trade;" onChange={handleChange} />
                 </label>
 
                 <fieldset className="radio">
                     <legend>Rate how difficult it might be:</legend>
-                    <label><img src={goldStar} style={{width: "3rem"}} />
-                    <input id="1star" name="difficulty" type="radio" value="1" onChange={e => setDifficulty(e.target.value)} />
+                    <label><img src={goldStar} style={{width: "3rem"}} alt="A gold star!" />
+                    <input id="1star" name="difficulty" type="radio" value="1" onChange={handleChange} />
                     </label>
-                    <label><img src={goldStar} style={{width: "3rem"}} />
-                    <input id="2star" name="difficulty" type="radio" value="2" onChange={e => setDifficulty(e.target.value)} />
+                    <label><img src={goldStar} style={{width: "3rem"}} alt="A gold star!" />
+                    <input id="2star" name="difficulty" type="radio" value="2" onChange={handleChange} />
                     </label>
-                    <label><img src={goldStar} style={{width: "3rem"}} />
-                    <input id="3star" name="difficulty" type="radio" value="3" onChange={e => setDifficulty(e.target.value)} />
+                    <label><img src={goldStar} style={{width: "3rem"}} alt="A gold star!" />
+                    <input id="3star" name="difficulty" type="radio" value="3" onChange={handleChange} />
                     </label>
-                    <label><img src={goldStar} style={{width: "3rem"}} />
-                    <input id="4star" name="difficulty" type="radio" value="4" onChange={e => setDifficulty(e.target.value)} />
+                    <label><img src={goldStar} style={{width: "3rem"}} alt="A gold star!" />
+                    <input id="4star" name="difficulty" type="radio" value="4" onChange={handleChange} />
                     </label>
-                    <label><img src={goldStar} style={{width: "3rem"}} />
-                    <input id="5star" name="difficulty" type="radio" value="5" onChange={e => setDifficulty(e.target.value)} />
+                    <label><img src={goldStar} style={{width: "3rem"}} alt="A gold star!" />
+                    <input id="5star" name="difficulty" type="radio" value="5" onChange={handleChange} />
                     </label>
                 </fieldset>
 
-                <input name="TaskId" type="hidden" value={id} onChange={e => setId(e.target.value)} />
-                <input name="taskComplete" type="hidden" value={complete} onChange={e => setComplete(e.target.value)} />
+                {/* <input name="TaskId" type="hidden" value={id} onChange={e => setId(e.target.value)} />
+                <input name="taskComplete" type="hidden" value={complete} onChange={e => setComplete(e.target.value)} /> */}
 
                 <button type="submit">Get it To-DONE!&trade;</button>
             </form>

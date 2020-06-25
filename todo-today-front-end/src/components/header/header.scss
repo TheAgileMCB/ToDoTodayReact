@@ -3,6 +3,10 @@ $headerText: #fff;
 $font: 'Patrick Hand SC', sans-serif;
 $headingFont: 'Permanent Marker', cursive;
 
+@mixin headContent ($baseColor){
+    background: $baseColor;
+}
+
 header {
     background: $baseColor;
     padding: .5rem;
@@ -23,7 +27,7 @@ header {
     nav {
         display: flex;
         justify-content: space-between;
-        .board-button, .home-button {
+        button {
             border-radius: 10px;
             border: 2px outset rgb(148, 148, 148);
             a {
@@ -40,4 +44,8 @@ header {
             // }
         }
     }
+}
+
+.dark header {
+    @include headContent (linear-gradient(to bottom right, rgba(19, 19, 19, 0.9), rgba(5, 5, 5, 0.9), rgba(27, 23, 23, 0.9), rgb(37, 34, 34), rgba(17, 16, 16, 0.9)));
 }

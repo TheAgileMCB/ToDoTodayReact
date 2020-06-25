@@ -1,6 +1,4 @@
 .form-wrapper{
-    border-top: 1px solid yellow;
-    border-bottom: 1px solid yellow;
     padding: 1rem;
     h1 {
         text-align: center;
@@ -11,6 +9,7 @@
         fieldset {
             text-align: center;
             legend{
+                margin: .5rem;
                 text-align: left;
             }
             &:hover label {
