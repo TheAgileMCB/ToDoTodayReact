@@ -1,5 +1,6 @@
 import React from 'react';
 import { NavLink } from 'react-router-dom';
+import Login from '../auth/login';
 import './header.scss';
 
 import useTheme from '../../contexts/theme';
@@ -14,6 +15,7 @@ export default function Header() {
             <div className="users">
                 <span>user: { user }</span>
             </div>
+            <Login />
             <h1>To-Do Today</h1>
             <h3>Get it To-DONE!&trade;</h3>
             <nav>
