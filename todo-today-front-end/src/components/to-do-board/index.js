@@ -10,6 +10,16 @@ export default function ToDoBoard(props) {
         return [1, 2, 3, 4, 5].map(x => x <= num ? <img key={x} src={goldStar} style={{ width: "1rem" }} alt="A gold star!" /> : null);
     }
 
+    // const drop = e => {
+    //     e.preventDefault();
+    //     const card_id = e.dataTRansfer.getData('card_id');
+
+    //     const card = document.getElementById(card_id);
+    //     card,style.display = 'block';
+
+    //     e.target.appendChild(card);
+    // }
+
     return (
         <div className="board">
             <h1>The BOARD</h1>
