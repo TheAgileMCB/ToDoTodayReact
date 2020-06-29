@@ -14,8 +14,8 @@ export default function Header() {
         <header>
             <div className="users">
                 <span>user: { user }</span>
-            </div>
             <Login />
+            </div>
             <h1>To-Do Today</h1>
             <h3>Get it To-DONE!&trade;</h3>
             <nav>
