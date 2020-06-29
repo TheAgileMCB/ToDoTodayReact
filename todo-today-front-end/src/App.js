@@ -12,7 +12,7 @@ import About from './components/about';
 import License from './components/license';
 import Footer from './components/footer';
 
-const todoAPI = 'https://deltav-todo.azurewebsites.net/api/v1/todos';
+const todoAPI = 'https://deltav-todo.azurewebsites.net/api/v1/Todos';
 
 function App() {
 
@@ -68,7 +68,7 @@ function App() {
   }, [request]);
 
   // The function to re-fetch data so the display is current
-  // Called on intial load and afer every write operation
+  // Called on initial load and after every write operation
   // On mount ... get the list
   useEffect(() => {
     _getAll();
@@ -110,7 +110,11 @@ function App() {
             <ToDoForm handleSubmit={_addItem} />
           </Route>
           <Route path="/board">
-            <ToDoBoard />
+            <ToDoBoard 
+            list={dataList}
+            handleCompleted={_toggleCompleted}
+            handleDelete={_deleteItem}
+            />
           </Route>
           <Route path="/about">
             <About />

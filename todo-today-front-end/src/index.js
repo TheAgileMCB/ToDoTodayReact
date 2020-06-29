@@ -6,16 +6,19 @@ import App from './app';
 import { BrowserRouter } from 'react-router-dom';
 import { ThemeProvider } from './contexts/theme';
 import { SettingsProvider } from './contexts/settings.js';
+import { AuthProvider } from './contexts/auth.js';
 import * as serviceWorker from './serviceWorker';
 
 ReactDOM.render(
   <React.StrictMode>
     <BrowserRouter>
-      <ThemeProvider>
-        <SettingsProvider>
-          <App />
-        </SettingsProvider>
-      </ThemeProvider>
+      <AuthProvider>
+        <ThemeProvider>
+          <SettingsProvider>
+            <App />
+          </SettingsProvider>
+        </ThemeProvider>
+      </AuthProvider>
     </BrowserRouter>
   </React.StrictMode>,
   document.getElementById('root')
