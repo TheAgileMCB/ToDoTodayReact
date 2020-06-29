@@ -25,18 +25,18 @@ const Login = () => {
     //     });
     // }
 
-    const user = auth.login.username;
+    const user = auth.user;
+    console.log(auth);
 
-
-        if (user) {
-            return (
-                <div className="login">
-                    <h3>Welcome back, {user}!</h3>
-                    <form onSubmit={logoutSubmit}>
-                        <button>Log Out</button>
-                    </form>
-                </div>)
-        }
+    if (user) {
+        return (
+            <div className="login">
+                <h3>Welcome back, {user.username}!</h3>
+                <form onSubmit={logoutSubmit}>
+                    <button>Log Out</button>
+                </form>
+            </div>)
+    }
 
     return (
         <form onSubmit={handleSubmit} className="login">

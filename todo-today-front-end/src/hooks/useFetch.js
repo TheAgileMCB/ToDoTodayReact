@@ -19,12 +19,14 @@ const useFetch = () => {
       if (!requestObject) { return; }
       setIsLoading(true);
       try {
-        //requestObject.options.headers = { 'Content-Type': 'application/json' };
+        requestObject.options.headers = { 'Content-Type': 'application/json' };
         
         if (user && user.token) {
           requestObject.options.headers['Authorization'] = `Bearer ${user.token}`;
         }
         
+        console.log(requestObject);
+
         const res = await fetch(requestObject.url, requestObject.options);
         const json = res.status === 200 && await res.json();
         setResponse(json);
@@ -34,10 +36,10 @@ const useFetch = () => {
       }
     };
     fetchData();
-  }, [requestObject]);
+  }, [requestObject, user]);
 
   // request - function that sets the request object
-  // response - the resonse (this is stored in state, updated after the fetchdata function runs)
+  // response - the response (this is stored in state, updated after the fetchdata function runs)
   // error - the response (this is stored in state, updated after the fetchdata function runs)
   // isLoading - boolean to toggle load state, changed during operation of the fetchData function
   return { request, response, error, isLoading };
