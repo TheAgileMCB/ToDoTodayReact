@@ -1,47 +1,47 @@
-import React, { useContext } from 'react';
-import { AuthContext} from './../../contexts/auth';
-import useLogin from '../../hooks/useLogin';
+import React from 'react';
+import useAuth from './../../contexts/auth';
 
-const Login = props => {
+const Login = () => {
 
-    //  contextType = AuthContext;
-    // const handleSubmit = e => {
-    //     e.preventDefault();
+    const auth = useAuth();
+    const handleSubmit = e => {
+        e.preventDefault();
 
-    //     const { username, password } = e.target.elements;
+        const { username, password } = e.target.elements;
 
-    //     user.login(username.value, password.value);
-    // }
-
-    // logoutSubmit = e => {
-    //     e.prefentDefault();
-    //     this.context.logout();
-    // }
-
-    const { handleChange, handleSubmit } = useLogin(onSubmit);
-
-    function onSubmit(loginValues) {
-        props.handleSubmit({
-            loginValues,     
-        });
+        auth.login(username.value, password.value);
     }
 
+    const logoutSubmit = e => {
+        e.preventDefault();
+        auth.logout();
+    }
+
+    // const { handleChange, handleSubmit } = useLogin(onSubmit);
+
+    // function onSubmit(loginValues) {
+    //     props.handleSubmit({
+    //         loginValues,     
+    //     });
+    // }
+
+    const user = auth.login.username;
 
 
-        if (props.loginValues) {
+        if (user) {
             return (
-                <>
-                    <h3>Welcome back, {props.loginValues.username}!</h3>
-                    <form onSubmit={props.loginValues.logoutSubmit}>
+                <div className="login">
+                    <h3>Welcome back, {user}!</h3>
+                    <form onSubmit={logoutSubmit}>
                         <button>Log Out</button>
                     </form>
-                </>)
+                </div>)
         }
 
     return (
-        <form onSubmit={handleSubmit}>
-            <input placeholder="Username" name="username" onChange={handleChange} />
-            <input placeholder="Password" type="password" name="password" onChange={handleChange} />
+        <form onSubmit={handleSubmit} className="login">
+            <input placeholder="Username" name="username" />
+            <input placeholder="Password" type="password" name="password" />
             <button>Login</button>
         </form>
     )

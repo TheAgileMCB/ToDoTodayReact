@@ -68,7 +68,7 @@ function App() {
   }, [request]);
 
   // The function to re-fetch data so the display is current
-  // Called on intial load and afer every write operation
+  // Called on initial load and after every write operation
   // On mount ... get the list
   useEffect(() => {
     _getAll();
