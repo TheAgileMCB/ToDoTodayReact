@@ -12,7 +12,7 @@ import About from './components/about';
 import License from './components/license';
 import Footer from './components/footer';
 
-const todoAPI = 'https://deltav-todo.azurewebsites.net/api/v1/todos';
+const todoAPI = 'https://deltav-todo.azurewebsites.net/api/v1/Todos';
 
 function App() {
 
